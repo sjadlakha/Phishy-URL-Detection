@@ -1,4 +1,5 @@
 # Extracting Features from the URL of the website
+# https://www.kaggle.com/akashkr/phishing-website-dataset
 import re
 import urllib.parse
 
@@ -55,3 +56,4 @@ def doubleSlashRedirecting(url):
     else:
         return 0
     
+# TODO: Check more methods of urllib for further development
