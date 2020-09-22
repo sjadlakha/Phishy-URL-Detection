@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing URL Detection System</title>
+    <style>
+        body{
+            font-family: 'Josefin Sans', sans-serif;
+            background-color: black;
+        }
+        .heading{
+            font-size: 5rem;
+            text-align: center;
+            padding-top: 3rem;
+            color: rgb(209, 240, 224);
+        }
+        form{
+            background-color: beige;
+            margin: 5rem;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+        .ip{
+            text-align: center;
+        }
+        .ip input{
+            width: 50%;
+            height: 2rem;
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            color: black;
+        }
+        .btn{
+            text-align: center;
+            margin-top: 2rem;
+            padding: 0.5rem;
+            
+        }
+        .btn input{
+            font-size: 2rem;
+            padding: 0.5rem;
+            width: 40%;
+            border-radius: 1rem;
+            background-color:rgb(222, 240, 202);
+            cursor: pointer;
+        }
+        .btn input:hover{
+            background-color: rgb(175, 231, 111);
+        }
+
+        .result{
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            padding: 0.5rem;
+            text-transform: uppercase;
+        }
+        .valid{
+            color: Green;
+        }
+        .invalid{
+            color:red;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        Phishing URL Detection
+    </div>
+    <form action="">
+        <div class="ip">
+            <input type="url" name="url" id="web_url" placeholder="Enter the URL here">
+        </div>
+        <div class="btn">
+            <input type="button" value="CHECK URL">
+        </div>
+        <div class="result"></div>
+    </form>
+
+    <script>
+        
+    </script>
+</body>
+</html>
