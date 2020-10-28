@@ -7,15 +7,27 @@ app.get('/', (req, res, next) => {
 })
 
 app.get('/checkurl',(req, res, next) => {
-    var spawn = require("child_process").spawn
 
-    var process = spawn('python',["./test.py", req.query.inputurl])
+    // Running python script
+    var spawnSync = require("child_process").spawnSync
 
-    process.stdout.on('data', (data) => {
-        console.log(data)
-        console.log(data.toString())
-        res.send(data.toString())
-    })
+    var process = spawnSync('python3',["./app.py", req.query.inputurl])
+    var er = process.stderr.toString()
+
+    if (er) {
+        console.log(er)
+    }
+
+    result = process.stdout.toString().trim()
+    console.log(result)
+    if (result == "1") {
+        res.sendFile('/Users/sahajadlakha/Documents/DEV_ZONE/PhishingDetection/UI/phishy.html')
+    } else if (result == "0") {
+        res.sendFile('/Users/sahajadlakha/Documents/DEV_ZONE/PhishingDetection/UI/legit.html')
+    } else {
+        console.log('Error in result from Python script')
+    }
+
 })
 
 app.listen(3000, () => {

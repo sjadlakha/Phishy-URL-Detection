@@ -4,7 +4,8 @@ import sys
 
 # data = getFeatures(sys.argv[1])
 
-data = getFeatures(input())
+# For development
+data = getFeatures('en.wikipedia.org')
 DTModel = pickle.load(open(
     '/Users/sahajadlakha/Documents/DEV_ZONE/PhishingDetection/DecisionTreeClassifier.sav', 'rb'))
 
@@ -13,10 +14,9 @@ RFModel = pickle.load(open(
 
 DT_result = DTModel.predict(data)
 RF_result = RFModel.predict(data)
-print(DT_result[0])
-# print(RF_result)
+print(str(DT_result[0]), flush = True)
+
 
 # Decision Tree is performing better
 
-# TODO: Improve performence of Decision tree model
-# TODO: Connect node app to python app`
+# TODO: Improve performance of Decision tree model
